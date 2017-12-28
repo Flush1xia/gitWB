@@ -1,0 +1,51 @@
+
+
+inv_plan_price_trg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+update inv_plan_price t
+   set t.item_name =
+       (select a.item_name from inv_master a where a.item_code = t.item_code)
+ where exists
+ (select 'A' from inv_master b where b.item_code = t.item_code);
+ 
+ 
+ t.item_name,t.item_model,t.item_norm,t.drawing_no,t.mp_flag,t.plan_price
+ update inv_plan_price t
+   set t.item_model =
+       (select a.item_model from inv_master a where a.item_code = t.item_code)
+ where exists
+ (select 'A' from inv_master b where b.item_code = t.item_code);
+ 
+ update inv_plan_price t
+   set t.item_draw =
+       (select a.drawing_no from inv_master a where a.item_code = t.item_code)
+ where exists
+ (select 'A' from inv_master b where b.item_code = t.item_code);
+ 
+ update inv_plan_price t
+   set t.mp_flag =
+       (select a.mp_flag from inv_master a where a.item_code = t.item_code)
+ where exists
+ (select 'A' from inv_master b where b.item_code = t.item_code);
+ 
+ update inv_plan_price t
+   set t.price_old =
+       (select a.plan_price from inv_master a where a.item_code = t.item_code)
+ where exists
+ (select 'A' from inv_master b where b.item_code = t.item_code);
+
+ select to_char(sysdate,'YYYY/MM/DD') from dual t;

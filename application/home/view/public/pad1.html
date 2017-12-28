@@ -1,0 +1,55 @@
+﻿<DIV class="i_menu_conpad line01_pad" id="i_nav_pad1">
+<DIV class="nav_pad_content_ind">
+<DIV class="news-pic" id="gzxwtp"><IMG width="560" height="380" src="__HOME__/images/no-pic.jpg"> 
+</DIV>
+<DIV class="top-news">
+
+<UL class="tab">
+  {volist name="cateres" id ="cate1"}
+  {if condition="$cate1.id  eq 28"}
+  <LI class="tab1" id="tab1"><A href="{:url('artlist/index',array('cateid'=>$cate1.id))}">{$cate1['catename']}</A></LI>
+
+ {else /}
+  <LI class="tab1_1" id="tab2"><A href="{:url('artlist/index',array('cateid'=>$cate1.id))}">{$cate1['catename']}</A></LI> 
+  {/if}
+{/volist}
+ <LI class="more"><A href="{:url('artlist/index',array('cateid'=>$cate1['id']))}" 
+  target="_blank">更多&gt;&gt;</A></LI> 
+</UL>
+ 
+ 
+<DIV class="l_show">
+<UL class="list-l">
+
+
+
+{volist name="bgartRes" id ="bgartres"}
+  
+  <LI><A title="{$bgartres.title}" href="{:url('article/index',array('artid'=>$bgartres.id))}" 
+  target="_blank">{$bgartres.title}</A> <SPAN>{$bgartres.time}</SPAN></LI>
+ 
+{/volist}
+
+</UL></DIV>
+
+
+ <DIV class="l_show" style="display: none;">
+
+<UL class="list-l">
+  
+  {volist name="zdartRes" id ="artres"}
+
+  <LI><A title="{$artres.title}" href="{:url('article/index',array('artid'=>$artres.id))}" 
+  target="_blank">{$artres.title}</A> <SPAN>{$artres.time}</SPAN></LI>
+
+  {/volist}
+ 
+
+  </UL>
+</DIV> 
+
+
+
+
+
+</UL></DIV></DIV><BR class="blank"></DIV>

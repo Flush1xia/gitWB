@@ -1,0 +1,360 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0035)http://www.gzw.dl.gov.cn/index.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+	<META content="IE=11.0000" http-equiv="X-UA-Compatible">
+	 <TITLE>tp5	 </TITLE>	 
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="author" content="thinkphp5">	 
+<META http-equiv="X-UA-Compatible" content="IE=edge">	
+ <LINK href="http://www.gzw.dl.gov.cn/" rel="dns-prefetch">			   
+ <LINK href="__HOME__/style/message.css" rel="stylesheet" type="text/css" media="all">		   
+ <LINK href="__HOME__/style/gzw_style.css" rel="stylesheet" type="text/css" media="all">		   
+ <LINK href="__HOME__/style/web_style.css" rel="stylesheet" type="text/css" media="all">				   
+<SCRIPT src="__HOME__/style/jquery.min.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/jquery.lazyload.min.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/jcarousellite.pack.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/jquery.loginValidation.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/index.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/png.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/placeHolder.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/floatadv.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/h.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/index_new_2014.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/jquery.cxslide.min.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/jquery_trs_web.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/jquery-1.8.3.min.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/tinybox.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/allrunImgMove.js" type="text/javascript"></SCRIPT>
+				   
+<SCRIPT src="__HOME__/style/jquery.d.imagechange.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/jquery.blockUI.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/indexVote.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/allrunImgMove.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/jquery.form.js" type="text/javascript"></SCRIPT>
+					     
+<SCRIPT src="__HOME__/style/swfobject_modified.js" type="text/javascript"></SCRIPT>
+   
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD>   
+<BODY><TITLE>欢迎访问！</TITLE> <!--飘窗js--> <!-- 关闭右侧飘窗 --> 
+<SCRIPT type="text/javascript">
+/*
+*
+*product：首页通栏banner切换效果实现2
+*date：
+*/	    
+	 var index2=1;
+	 var len2=$(".banner_link0814>a").length;
+
+	 function showSys2(num)  //图片切换函数
+	   {
+		   $(".banner_link0814>a").hide();
+		   $(".banner_link0814>a").eq(num).fadeIn();
+	   }
+	   
+	   function ziDong() {  //自动切换
+			if(index2==2){
+			 index2=0;
+			}
+			showSys2(index2);
+			index2=index2+1;
+
+	   }
+	   
+	    int1=setInterval(ziDong,4000);
+		
+		 $(".banner_link0814").mouseover(function()  //移动到上面时停止自动切换
+		   {
+			clearInterval(int1);
+		   });
+		$(".banner_link0814").mouseout(function()  //移开时继续自动切换
+		   {
+			int1=setInterval(ziDong,4000);
+		   });
+		
+		
+			function searchsubmit() {
+				alert(("#textfiled").val());
+				if($("#textfield").val() == "请输入关键词") {
+					alert("请输入关键词");
+				}else{
+					$("#serachform").submit();
+				}	
+			}
+			
+</SCRIPT>
+	
+<SCRIPT language="javascript">
+	/* 首页tab栏切换效果 */
+	$(function(){
+	 	$(".tab1_1,.tab1").bind("mouseover",function(){
+			var t = $(this);	
+			if(t.attr("class").indexOf("tab1_1")>-1){
+				t.removeClass("tab1_1").addClass("tab1").siblings(":not('.more')").removeClass("tab1").addClass("tab1_1");
+			}		
+			var po = t.parent().children().index(this);
+			t.parent().siblings("div").hide().eq(po).show();
+		});
+	});
+	
+	
+	
+</SCRIPT>
+ <!----> <!--顶部导航  -->  
+<DIV class="top">
+<DIV id="container_1100">
+
+<UL class="link1">
+  <FORM id="serachform" action="/newsQueryList__.html" 
+method="get"><INPUT class="mButton" id="submitbuttom" onclick="searchsubmit()" type="submit" value="搜索"> 
+            <INPUT name="newsTitle" class="mInput" id="textfield" onfocus="if (value =='请输入关键词'){value =''}" onblur="if (value ==''){value='请输入关键词'}" type="text" value="请输入关键词"> 
+               	  </FORM></UL></DIV></DIV><!--logo  --> 
+<DIV class="i_header">
+<DIV class="i_logo"><IMG width="873" height="143" src="__HOME__/images/logo1.png"></DIV></DIV>
+<DIV class="i_menu">
+<DIV id="container_1100">
+<UL class="nav_ul">
+<LI class="menu_1" id="ibar_nav1"><A href="{:url('index/index')}">网站首页</A></LI>
+  {volist name="cateres" id="cate"} 
+  <LI class="menu_2" id="ibar_nav1"><A href="http://127.0.0.1/bick/public/index.php/home/artlist/index/cateid/{$cate.id}">{$cate.id}{$cate.catename}</A></LI>
+  {/volist}
+
+</UL></DIV></DIV>
+<SCRIPT>
+/* 流量统计 */  
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d93595c7ef82546ee32ed826e5404519";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</SCRIPT>
+ 
+<SCRIPT type="text/javascript">
+$(function(){
+	$("#demoImgRun").allrunImgMove();
+	/*轮播图片*/
+	var gzxw = [
+       	
+       		
+       		{title:'刘岩副市长带队赴上海开展对标学习活动',src:'http://www.gzw.dl.gov.cn/resources/toppic/A4A6D614BDEF374262268DEDB9EE0A92.jpg',href:'news/view_90685.html',target:'_blank'}
+       	
+       		,
+
+       		{title:'市国资委召开领导干部大会全面推进“学习讲...',src:'http://www.gzw.dl.gov.cn/resources/toppic/21EA697AFA446EE96084FCDDE9E4A415.jpg',href:'news/view_90428.html',target:'_blank'}
+       	
+    ];
+	$("#gzxwtp").d_imagechange({
+		desc:false,
+		bgHeight:24,
+		data:gzxw,			
+		playTime:6000,
+		btnMargin:2,
+		bgColor:'#200',
+		height:380,
+		width:560
+	});
+	
+	var qydt = [
+       	
+       		
+       		{title:'公交集团不畏严寒多措并举全力保障市民安全...',src:'http://www.gzw.dl.gov.cn/resources/toppic/FC90C28B588F75B786CA1434E2D9FC31.jpg',href:'news/view_88682.html',target:'_blank'}
+       	
+       		,
+       		{title:'大连“俊”青年表彰大会隆重召开 公交集团...',src:'http://www.gzw.dl.gov.cn/resources/toppic/445763D124E8CC7029118DCEC8B7A7EF.jpg',href:'news/view_88586.html',target:'_blank'}
+       	
+       		,
+       		{title:'大连地铁驾驶员六强将代表大连地铁参加全国...',src:'http://www.gzw.dl.gov.cn/resources/toppic/7CCA2328FDB477802B535B474BF710E0.jpg',href:'news/view_86477.html',target:'_blank'}
+       	
+       		,
+       		{title:'大连重工起重集团成功制造国内最大海上风电...',src:'http://www.gzw.dl.gov.cn/resources/toppic/8F20340CC984EBE089ACB6F17B58791D.jpg',href:'news/view_86337.html',target:'_blank'}
+       	
+       		,
+       		{title:'大连国际老龄产业博览会圆满结束',src:'http://www.gzw.dl.gov.cn/resources/toppic/1115573511B49F78F61FC154C0029213.jpg',href:'news/view_85237.html',target:'_blank'}
+       	
+    ];
+	$("#gqywtp").d_imagechange({
+		desc:false,
+		bgHeight:24,
+		data:qydt,			
+		playTime:6000,
+		btnMargin:2,
+		bgColor:'#200',
+		height:170,
+		width:240
+	});
+	
+	//$('.ct:gt(0)').hide();
+	var hdw = $('.qyl-topTitle li');
+	hdw.hover(function(){
+		$(this).addClass('two').siblings().removeClass('two');
+	});
+	hdw.mouseover(function(){
+		$(this).addClass('one').siblings().removeClass();
+		var hdw_index = hdw	.index(this);
+		$(".czqytu").eq(hdw.index(this)).show().siblings('.czqytu').hide();
+	});
+	
+	$("#producttypeid").change(function(){
+    	if($(this).val!=undefined&&$(this).val!=""){
+    		var producttypeidson = $("#producttypeidson");
+    		producttypeidson.empty();
+    		producttypeidson.append("<option value=''>加载中......</option>");
+    		$.ajax({
+    			url:"/getProductType.html",
+    			timeout:20000,
+    			data:"encoding="+new Date().getTime()+"&fid="+$(this).val(),
+    			dataType:"text",
+    			success:function(datas){
+    				var s = $("#producttypeidson");
+    				s.empty();
+    				if(datas!='none'){
+    					var json = JSON.parse(datas);
+    					var options = "";
+    					$.each(json.dictionarys, function(i, e){
+							options +="<option value='"+e.id+"'>"+e.name+"</option>";
+						});
+    					s.append(options);
+    				}
+    				else {
+    					s.append("<option value=''>产品小类</option>");
+    				}
+    			},
+    			error:function(){
+    				var s = $("#producttypeidson");
+    				s.emtpy().append("<option value=''>产品小类</option>");
+    			}
+    		});
+    	}
+    });
+
+//在线受理
+$("#sqformSubmit").click(function(){
+	if($(".slbd-1").val()==""||$(".slbd-1").val()==$(".slbd-1").attr("placeholder")){
+		alert("请输入主题！");
+		$(".slbd-1").focus();
+		return;
+	}
+	if($(".slbd-3").val()==""||$(".slbd-3")==$(".slbd-3").attr("placeholder")){
+		alert("请输入内容！");
+		$(".slbd-3").focus();
+		return ;
+	}
+	 if($(".slbd-4-yzmi").val()==""||$(".slbd-4-yzmi").val()==$(".slbd-4-yzmi").attr("placeholder")){
+		alert("请输入验证码！");
+		$(".slbd-4-yzmi").focus();
+		return ;
+	} 
+	$("#sqformSubmit").attr("disabled",true).val("提交中...");
+	$.ajax({
+		url:"/complaintsUserForm_.html",
+		type:"POST",
+		data:"encoding="+new Date().getTime()+"&"+$("#slbd").serialize()+"&"+"verifiedCode="+$(".slbd-4-yzmi").val(),
+		timeout:20000,
+		success:function(v){
+			if(v=="cerror"){
+				alert("验证码输入错误，请重新输入");
+				$("#new_verifycode").click();
+				$("#sqformSubmit").removeAttr("disabled").val("提交");
+				$(".slbd-4-yzmi").focus();
+			}
+			else if(v.length<20){ //返回成功  返回值小于20 为防止后台产生错误页面返回
+				alert("诉求提交成功！您的反馈码为："+v+" 请妥善保管，以供查询。");
+				$(".txbd3").html("您的反馈码为" +"<font style='color:red;font-size:3;font-weight：900;'>" + v + "</font>" + "，请妥善保管以供查询。");
+				$("#sqformSubmit").removeAttr("disabled").val("提交");/* 
+				$(".nymain-right").hide().get(1).style.display='block'; */
+			}
+			else {
+				$("#sqformSubmit").removeAttr("disabled").val("提交");
+				alert("发生错误，请重试！");				
+			}
+		},
+		error:function(){
+			$("#sqformSubmit").removeAttr("disabled").val("提交");
+			alert("发生错误，请重试！");
+		}
+	});
+})
+
+})
+</SCRIPT>
+ 
+<DIV id="container_1100">
+<DIV class="clear"></DIV><!--导航内容pad-->         
+<DIV class="main_up_navpad">
+
+{include file="public/pad1"}   
+{include file="public/pad2"}         
+{include file="public/pad3"}
+{include file="public/pad4"}   
+{include file="public/pad5"}         
+{include file="public/pad6"}
+
+</DIV></DIV>		  
+		  
+
+  
+
+
+<!--友情链接  --> 
+{include file="public/links"}
+<!--footer底部--> 
+{include file="public/footer"}
+<SCRIPT src="__HOME__/style/adFloat1.js" type="text/Javascript"></SCRIPT>
+ 
+<SCRIPT src="__HOME__/style/adFloat2.js" type="text/Javascript"></SCRIPT>
+ 
+<SCRIPT src="__HOME__/style/adFloat3.js" type="text/Javascript"></SCRIPT>
+ 
+<SCRIPT type="text/javascript">
+    var today = new Date();
+    function removediv(divid){
+	 $("#"+divid).remove();
+	}
+    
+	if(('1511800170692' >= '' || ''=='')
+	&& ('1511800170692' <= '' || ''=='')){
+    
+    
+	
+	document.write("<div id='ad53718' style='z-index:999;'>");
+	
+	
+	document.write("<a href='http://www.gzw.dl.gov.cn/news/view_90785.html' target='_blank'>");
+	
+	document.write("<div style='float:left;'>");
+	document.write("<img src='/resources/advertisePic/7667A21551282B7C4FC68D202438140B.jpg' border='0'>");
+	document.write("</div>");
+	
+	document.write("</a>");
+	
+	
+	document.write("</div>");
+	new AdMove("ad53718").Run();
+	
+	
+	
+	}
+	
+</SCRIPT>
+ </BODY></HTML>

@@ -1,0 +1,343 @@
+{template "content","header"}
+<div class="container">
+
+<!--首页头条推荐-->
+<div class="contentbox bot">
+<div class="FocusPicBox left">
+  <div class="FocusPic">        
+  <div class="content" id="main-slide" style="width: 340px; height: 255px;">
+	  <div class="changeDiv">
+	  {pc:content action="position" posid="2" order="id DESC" num="10" cache="0"}
+	  {loop $data $r}
+	  <a target="_blank" href="{$r[url]}" title="{$r[title]}" style="display: none;"><img src="{thumb($r[thumb],340,250)} " alt="{thumb($r[thumb],110,0)}" width="340" height="250"></a>
+	{/loop}
+	 {/pc}
+
+</div>
+<!--<div class="change"><i class="">1</i><i class="">2</i><i class="">3</i><i class="">4</i><i class="">5</i><i class="cur">6</i><i>7</i><i>8</i><i>9</i><i>10</i></div>--></div>
+	 </div>
+</div>
+
+ <!--报告制度 异常信息栏-->
+<div class="newsbox left">
+  <div class="title01">
+	<div class="weather">	  
+	</div>
+	<ul class="SwapTab01">
+	
+	  <li class="fb"><a target="_blank" href="{$CATEGORYS[6][url]}">{$CATEGORYS[6][catname]}</a></li>
+	  <li><a target="_blank" href="{$CATEGORYS[7][url]}">{$CATEGORYS[7][catname]}</a></li>
+	</ul>
+  </div>
+  <div class="tab-content01">
+	<ul>				
+				
+				{if ($groupid =="")}
+				{pc:get sql="select b.* from v9_news b where (b.catid in (98,99 ,100 ,104,105 ,107)) or (b.catid BETWEEN 110 and  121) or  (b.catid BETWEEN 177  and 221) order by b.id desc"}
+				 {loop $data $r}
+				<li><span class="time">{date('Y-m-d',$r[inputtime])}</span><a target="_blank" href="{$r[url]}" title="{$r[title]}">{$r[title]}{$groupid}</a>
+				</li>
+				{/loop}
+				{/pc}
+
+				{/if}
+
+				{if ($groupid =="4")} 
+				<li><span class="time">{date('Y-m-d',$r[inputtime])}</span><a target="_blank" href="{$r[url]}" title="{$r[title]}">{$r[title]}{$groupid}</a>
+				</li>
+				 {/if}
+
+				{if ($groupid =="5")}
+				{pc:content action="lists" catid="6" order="id DESC" num="8"  cache="0"}
+				{loop $data $r}
+				<li><span class="time">{date('Y-m-d',$r[inputtime])}</span><a target="_blank" href="{$r[url]}" title="{$r[title]}">{$r[title]}{$groupid}</a>
+				</li>
+				
+				{/loop}
+				{/pc} 
+				{/if}
+				
+				
+	</ul>
+	<ul class="hidden">				
+		
+				 {pc:content action="lists" catid="7" order="id DESC"  num="8" cache="0"}
+						{loop $data $r}
+				<li><span class="time">{date('Y-m-d',$r[inputtime])}</span><a target="_blank" href="{$r[url]}" title="{$r[title]}">{$r[title]}</a>
+				 <?php
+
+if (!$userid){
+
+echo"会员没有登录";
+
+}else
+
+{
+
+echo"会员登录了";
+
+}
+
+?>
+				</li>
+				{/loop}
+				{/pc}
+
+			  </ul>
+  </div>
+</div>
+
+<div class="sidebar right"
+<!--报告制度 企业宣传栏-->
+  <div class="box">
+	<div class="title02">
+	  <ul class="SwapTab00">
+	<li class="fb"><a target="_blank" href="{$CATEGORYS[13][url]}">{$CATEGORYS[13][catname]}</a></li>
+		<li><a target="_blank" href="{$CATEGORYS[6][url]}">TEST</a></li>
+	  </ul>
+	</div>
+	<div class="tab-content00 sidvod">
+	  <ul>
+					 {pc:content action="lists" catid="13" order="id DESC" num="4" cache="0"}
+					 {loop $data $r}
+					<li><a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],90,68)} " title="{$r[title]}"></a>
+		  <div><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],16)}</a></div>
+		</li>
+	  
+					{/loop}
+					 {/pc}                        
+				  </ul>
+	  <ul>
+				   {pc:content action="lists" catid="6" order="id DESC" num="4" cache="0"}
+					{loop $data $r}
+					<li><a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],90,68)} " title="{$r[title]}"></a>
+		  <div><a target="_blank" href="{$r[url]}" title="{$r[title]}">TEST</a></div>
+		</li>
+	  
+					{/loop}
+					{/pc}   
+
+				  </ul>
+	</div>
+  </div>
+</div>
+</div>
+   <!--抓好生产横幅-->
+<div class="contentbox bot">
+<div class="ads734X80 left bot">
+  <div class="slideBox01">
+	<div class="hd">
+	  <ul>
+		<li class="on">1</li>
+	  </ul>
+	</div>
+	<div class="bd">
+	  <div class="tempWrap" style="overflow:hidden; position:relative; height:80px">
+	  <ul style="height: 400px; position: relative; padding: 0px; margin: 0px; top: -80px;">		 
+		<li style="height: 80px;"><a target="_blank" href="{APP_PATH}index.php?m=special&amp;c=index&amp;id=22&amp;pc_hash=wCKDrV"><img src="{IMG_PATH}njxz.jpg" width="734" height="80"></a></li>
+	 
+	  </ul>
+	  </div>
+	</div>
+  </div>
+  <script type="text/javascript">jQuery(".slideBox01").slide({mainCell:".bd ul",effect:"topLoop",autoPlay:true});</script> 
+</div>
+<div class="sidebar right"> 
+  
+  <!--通知公告-->
+
+  <div class="box bot">
+	<div class="title02"><span class="more"><a target="_blank" href="{$CATEGORYS[58][url]}">更多&gt;&gt;</a></span>
+	  <div class="fb">{$CATEGORYS[58][catname]}</div>
+	</div>
+	<div class="sidlis" style="overflow:hidden;">
+	  <ul id="ticker" style="overflow: hidden;">
+												
+					 {pc:content action="lists" catid="58" order="id DESC" num="8" cache="0"}
+				{loop $data $r} 
+				  <div style="margin-top: -23.985px;"><li><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],34)}</a></li></div>
+						{/loop}
+					 {/pc}
+</ul>
+	  <script type="text/javascript">
+
+  $(function() {
+
+	var ticker = $("#ticker");
+
+	ticker.children().filter("li").each(function() {
+
+	  var dt = $(this),
+
+		container = $("<div>");
+
+	  dt.next().appendTo(container);
+
+	  dt.prependTo(container);
+
+	  container.appendTo(ticker);
+
+	});
+
+	ticker.css("overflow", "hidden");
+
+	function animator(currentItem) {
+
+	  var distance = currentItem.height();
+
+		duration = (distance + parseInt(currentItem.css("marginTop"))) / 0.015;
+
+	  currentItem.animate({ marginTop: -distance }, duration, "linear", function() {
+
+		currentItem.appendTo(currentItem.parent()).css("marginTop", 0);
+
+		animator(currentItem.parent().children(":first"));
+
+	  }); 
+
+	};		
+
+	animator(ticker.children(":first"));
+
+	ticker.mouseenter(function() {
+
+	  ticker.children().stop();		  
+
+	});
+
+	ticker.mouseleave(function() {	
+
+	  animator(ticker.children(":first"));		  
+
+	});
+
+  });
+</script> 
+	</div>
+  </div>
+  
+  <!--制度汇编-->
+  
+  <div class="box">
+	<div class="title02"><span class="more"><a target="_blank" href="{$CATEGORYS[8][url]}">更多&gt;&gt;</a></span>
+	  <div class="fb">{$CATEGORYS[8][catname]}</div>
+	</div>
+	<div class="sidlis">
+	  <ul>
+					
+					{pc:content action="lists" catid="8" order="id DESC" num="8" cache="0"}
+				   {loop $data $r} 
+					<li><span class="time">{date('Y-m-d',$r[inputtime])}</span><a target="_blank" href="{$r[url]}" title="{str_cut($r[title],34)}">{str_cut($r[title],34)}</a></li>
+						{/loop}
+					 {/pc}
+					
+				  </ul>
+	</div>
+  </div>
+</div>
+ <!--专项活动-->
+<div class="main01 left MR10">
+  <div class="title03"><span class="more"><a target="_blank" href="{$CATEGORYS[9][url]}">更多&gt;&gt;</a></span>
+	<div class="tit">{$CATEGORYS[9][catname]}</div>
+  </div>
+  <ul>
+			 <li>{pc:content action="lists" catid="9" order="id DESC" num="8" cache="0"}
+				   {loop $data $r} 
+			<span class="time">{date('Y-m-d',$r[inputtime])}</span><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],22)}</a>
+						{/loop}
+					 {/pc}</li>
+			
+		  </ul>
+</div>
+ <!--经营计划-->
+<div class="main01 left MR10">
+  <div class="title03"><span class="more"><a target="_blank" href="{$CATEGORYS[10][url]}">更多&gt;&gt;</a></span>
+	<div class="tit">{$CATEGORYS[10][catname]}</div>
+  </div>
+  <ul>
+			
+			{pc:content action="lists" catid="10" order="id" num="8" cache="0"}
+				   {loop $data $r} 
+			<li><span class="time">{date('Y-m-d',$r[inputtime])}</span><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],22)}</a></li>
+						{/loop}
+					 {/pc}
+			
+		  </ul>
+</div>
+  <!--企业宣传-->
+  <div class="main01 left bot">
+  <div class="title03"><span class="more"><a target="_blank" href="{$CATEGORYS[13][url]}">更多&gt;&gt;</a></span>
+	<div class="tit">{$CATEGORYS[13][catname]}</div>
+  </div>
+  <ul>
+			
+		<li>{pc:content action="lists" catid="13" order="id DESC" num="8" cache="0"}
+				   {loop $data $r} 
+			<li><span class="time">{date('m-d',$r[inputtime])}</span><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],30)}</a>
+						{/loop}
+					 {/pc}
+				 </li>
+		  </ul>
+</div>
+
+<!--图片展示-->
+<div class="main01picbox left">
+  <div class="main01pictit"><a target="_blank" href="{siteurl($siteid)}" title="点击查看更多&gt;&gt;"><img src="{IMG_PATH}gxll_tit04.gif"></a></div>
+  <div class="main01pic left">
+	<ul>
+	{pc:content  action="position" posid="2" thumb="1" order="listorder DESC" num="4"}
+	{loop $data $r}
+	<li>
+	<a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],155.89,117.89)}" title="{$r[title]}"></a>	
+	<div class="ptb"><a target="_blank" href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></div>
+	</li>
+	{/loop}
+	{/pc}
+<!--{pc:content  action="position" posid="" thumb="1" order="listorder DESC" num=""}
+<ul class="content news-photo picbig">
+{loop $data $r}
+<li>
+<div class="img-wrap">
+<a href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],110,0)}" title="{$r[title]}"/></a>
+</div>
+<a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],20)}</a>
+</li>
+{/loop}
+</ul>
+{/pc}-->
+				
+			  </ul>
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+  <div class="crumbs"><a href="{siteurl($siteid)}">网站首页</a><span> &gt; </span><a href="{APP_PATH}index.php?m={ROUTE_M}&siteid={$siteid}">友情链接</a><span> &gt; </span>{$type_arr[name]}</div>
+    <div class="link">
+     
+ 	 	<h5>{$type_arr[name]} </h5>
+        <div class="tag_a">
+        	{pc:link action="lists" typeid="$type_id" siteid="$siteid" linktype="1" order="desc" num="6" return="dat"}
+				{loop $dat $v}
+	       		 <a href="{$v[url]}" title="{$v[name]}"  target="_blank"><img src="{$v[logo]}" width="92" height="31" /></a>
+		        {/loop}
+			{/pc}
+         </div>
+        <div class="tag_a">
+        	{pc:link action="lists" typeid="$type_id" siteid="$siteid" linktype="0" order="desc" num="10" return="dat"}
+				{loop $dat $v}
+	       		 <a href="{$v[url]}" title="{$v[name]}" target="_blank">{$v[name]}&nbsp;&nbsp; </a>
+		        {/loop}
+			{/pc}
+         </div>
+    	 
+         	<!--pages-->
+         </div>
+    </div>
+
+
+{template "content","footer"}

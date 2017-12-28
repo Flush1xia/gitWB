@@ -1,0 +1,9 @@
+1、Ueditor 文件大小 设置
+php.ini 设置变量 upload_max_filesize、post_max_size
+2、Ueditor 路径注意修改
+
+3、访问路径设置
+Apache httpd设置
+config 设置静态路径
+
+默认模块 'default_module'  

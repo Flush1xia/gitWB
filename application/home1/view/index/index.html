@@ -1,0 +1,289 @@
+{include file="public/header"}
+<div class="container">
+
+<!--首页推荐-->
+<div class="contentbox bot">
+<div class="FocusPicBox left">
+  <div class="FocusPic">        
+  <div class="content" id="main-slide" style="width: 340px; height: 255px;">
+	  <div class="changeDiv">
+	   {volist name="recArt" id="art"}
+	  <a target="_blank" href="{:url('Article/index',array('artid'=>$art['id']))}" title="" style="display: none;"><img src="{$art.thumb} " alt="{$art.title}" width="340" height="250"></a>
+	   {/volist}
+</div>
+<!--<div class="change"><i class="">1</i><i class="">2</i><i class="">3</i><i class="">4</i><i class="">5</i><i class="cur">6</i><i>7</i><i>8</i><i>9</i><i>10</i></div>--></div>
+	 </div>
+</div>
+
+ <!--报告制度 专项活动栏-->
+<div class="newsbox left">
+  <div class="title01">
+	<div class="weather">	  
+	</div>
+	<ul class="SwapTab01">	
+      {volist name="cateres" id="cate"} 
+	  {if condition="$cate['id'] eq 45"}
+	  <li class="fb"><a target="_blank" href="{:url('artlist/index',array('cateid'=>$cate['id']))}">{$cate['catename']}</a></li>
+	  {/if}
+      {/volist}
+	   {volist name="cateres" id="cate"} 
+	  {if condition="$cate['id'] eq 48"}
+	  <li><a target="_blank" href="{:url('artlist/index',array('cateid'=>$cate['id']))}">{$cate['catename']}</a></li>
+	  {/if}
+      {/volist}
+	</ul>
+  </div>
+  <div class="tab-content01">
+	<ul>		
+
+			 {volist name="bgartRes" id ="bgartres"}  		
+	          <li><span class="time">{$bgartres.time}</span><a target="_blank" href="{:url('article/index',array('artid'=>$bgartres['id']))}" title="{}">{$bgartres.title}</a>
+	           </li>
+	          {/volist} 
+	</ul>
+	<ul class="hidden">	
+	 {volist name="zxartRes" id ="zxartRes"}	
+	<li><span class="time">{$zxartRes.time}</span><a target="_blank" href="{:url('article/index',array('artid'=>$zxartRes['id']))}" title="{$zxartRes.title}">{$zxartRes.title}</a>
+	{/volist} 
+	</li>  
+	</ul>
+  </div>
+</div>
+
+<div class="sidebar right">
+<!--企业宣传-->
+  <div class="box">
+	<div class="title02">
+	  <ul class="SwapTab00">	  		
+	 <li class="fb">   
+	<a target="_blank" href="{:url('artlist/index',array('cateid'=>'149'))}">光荣榜</a>
+	</li>	
+	<li>
+	<a target="_blank" href="{:url('artlist/index',array('cateid'=>'150'))}"">专家风采</a>
+	</li>
+	  </ul>
+	</div>
+	
+	<div class="tab-content00 sidvod">
+	    <ul>
+	     {volist name="grartRes" id ="grartres"} 
+	      <li>			 
+			<a target="_blank" href="{:url('article/index',array('artid'=>$grartres['id']))}" title="{$grartres.title}"><img src="{$grartres.thumb}" title="{$grartres.title}"></a>
+		     <div><a target="_blank" href="{:url('article/index',array('artid'=>$grartres['id']))}" title="{$grartres.title}">{$grartres.title}</a></div>   
+		  </li>
+		    {/volist} 
+		</ul>
+	    <ul>	
+	    	{volist name="fcartRes" id ="fcartres"} 
+	      <li>	
+	      		 
+			<a target="_blank" href="{:url('article/index',array('artid'=>$fcartres['id']))}" title="{$fcartres.title}"><img src="{$fcartres.thumb}" title="{$fcartres.title}"></a>
+		     <div><a target="_blank" href="{:url('article/index',array('artid'=>$fcartres['id']))}" title="{$fcartres.title}">{$fcartres.title}</a></div> 
+		      
+		  </li>
+		   {/volist}  
+		   
+		</ul>
+	</div>
+  </div>
+</div>
+</div>
+   <!--抓好生产横幅-->
+<div class="contentbox bot">
+<div class="ads734X80 left bot">
+
+  <script type="text/javascript">jQuery(".slideBox01").slide({mainCell:".bd ul",effect:"topLoop",autoPlay:true});</script> 
+</div>
+<div class="sidebar right"> 
+  
+  <!--公告栏-->
+
+  <div class="box bot">
+  	 {volist name="cateres1" id="cate1"} 
+	  {if condition="$cate1['id'] eq 44"}
+	<div class="title02"><span class="more"><a target="_blank" href="{:url('artlist/index',array('cateid'=>$cate1['id']))}">更多&gt;&gt;</a></span>
+	  <div class="fb">{$cate1['catename']}</div>
+	</div>
+	 {/if}
+	  {/volist}
+
+	<div class="sidlis" style="overflow:hidden;">
+	  <ul id="ticker" style="overflow: hidden;">
+	  {volist name="ggartRes" id ="ggartres"}  	
+				  <div style="margin-top: -23.985px;">	 
+				  	<li><a target="_blank" href="{:url('article/index',array('artid'=>$ggartres['id']))}" title="{}">{$ggartres.title}</a></li>
+				  </div>	
+				  {/volist}		
+</ul>
+	  <script type="text/javascript">
+
+  $(function() {
+
+	var ticker = $("#ticker");
+
+	ticker.children().filter("li").each(function() {
+
+	  var dt = $(this),
+
+		container = $("<div>");
+
+	  dt.next().appendTo(container);
+
+	  dt.prependTo(container);
+
+	  container.appendTo(ticker);
+
+	});
+
+	ticker.css("overflow", "hidden");
+
+	function animator(currentItem) {
+
+	  var distance = currentItem.height();
+
+		duration = (distance + parseInt(currentItem.css("marginTop"))) / 0.015;
+
+	  currentItem.animate({ marginTop: -distance }, duration, "linear", function() {
+
+		currentItem.appendTo(currentItem.parent()).css("marginTop", 0);
+
+		animator(currentItem.parent().children(":first"));
+
+	  }); 
+
+	};		
+
+	animator(ticker.children(":first"));
+
+	ticker.mouseenter(function() {
+
+	  ticker.children().stop();		  
+
+	});
+
+	ticker.mouseleave(function() {	
+
+	  animator(ticker.children(":first"));		  
+
+	});
+
+  });
+</script> 
+	</div>
+  </div>
+  
+  <!--制度汇编-->
+  
+  <div class="box">
+  	{volist name="cateres" id="cate"} 
+	{if condition="$cate['id'] eq 47"}
+	<div class="title02"><span class="more"><a target="_blank" href="{:url('artlist/index',array('cateid'=>$cate['id']))}">更多&gt;&gt;</a></span>
+	  <div class="fb">{$cate['catename']}</div>	  
+	</div> 
+	<div class="sidlis">
+		{/if}
+	  {/volist}
+	  <ul>		
+	   {volist name="zdartRes" id ="zdartres"}  		
+	          <li><span class="time">{$zdartres.time}</span><a target="_blank" href="{:url('article/index',array('artid'=>$zdartres['id']))}" title="{}">{$zdartres.title}</a>
+	           </li>
+	          {/volist}  	
+	 </ul>
+	</div>
+  </div>
+</div>
+ <!--异常信息-->
+<div class="main01 left MR10">
+		{volist name="cateres" id="cate"} 
+	{if condition="$cate['id'] eq 46"}
+  <div class="title03"><span class="more"><a target="_blank" href="{:url('artlist/index',array('cateid'=>$cate['id']))}">更多&gt;&gt;</a></span>
+	<div class="tit">{$cate['catename']}</div>
+  </div>
+  	{/if}
+	  {/volist}
+  <ul>
+	 <li>
+	 {volist name="ycartRes" id ="ycartres"}  		
+	          <li><span class="time">{$ycartres.time}</span><a target="_blank" href="{:url('article/index',array('artid'=>$ycartres['id']))}" title="{}">{$ycartres.title}</a>
+	           </li>
+	          {/volist}  
+	</li>
+			
+		  </ul>
+</div>
+ <!--经营计划-->
+<div class="main01 left MR10">
+  {volist name="cateres" id="cate"} 
+	{if condition="$cate['id'] eq 119"}
+  <div class="title03"><span class="more"><a target="_blank" href="{:url('artlist/index',array('cateid'=>$cate['id']))}">更多&gt;&gt;</a></span>
+	<div class="tit">{$cate['catename']}</div>
+  </div>
+  	{/if}
+	  {/volist}	 
+			<li>
+			 {volist name="jyartRes" id ="jyartres"}  		
+	          <li><span class="time">{$jyartres.time}</span><a target="_blank" href="{:url('article/index',array('artid'=>$jyartres['id']))}" title="{}">{$jyartres.title}</a>
+	           </li>
+	          {/volist} 
+	      </li>	
+		  </ul>
+</div>
+  <!--质量管理-->
+  <div class="main01 left bot">
+   {volist name="cateres" id="cate"} 
+	{if condition="$cate['id'] eq 120"}
+  <div class="title03"><span class="more"><a target="_blank" href="{:url('artlist/index',array('cateid'=>$cate['id']))}">更多&gt;&gt;</a></span>
+	<div class="tit">{$cate['catename']}</div>
+  </div>
+  	{/if}
+	  {/volist}
+  <ul>
+			<li> 
+			{volist name="zlartRes" id ="zlartres"}  		
+	          <li><span class="time">{$zlartres.time}</span><a target="_blank" href="{:url('article/index',array('artid'=>$zlartres['id']))}" title="{}">{$zlartres.title}</a>
+	           </li>
+	          {/volist}
+
+			 </li>
+		  </ul>
+</div>
+
+<!--图片展示-->
+<div class="main01picbox left">
+
+  <div class="main01pictit"><a target="_blank" href="__URLSITE__/home1" title="点击查看更多&gt;&gt;"><img src="__HOME__/images/gxll_tit04.gif"></a></div>
+  <div class="main01pic left">
+	<ul>
+	{volist name="recPicArt" id="recpic"}
+	<li>
+	<a target="_blank" href="{:url('Article/index',array('artid'=>$art['id']))}" title="{$recpic.title}"><img src="{$recpic.thumb}" title="{$recpic.title}"></a>	
+	<div class="ptb"><a target="_blank" href="{:url('Article/index',array('artid'=>$art['id']))}" title="{$recpic.title}">{$recpic.title}</a></div>
+	</li>
+	{/volist}			
+	 </ul>
+  </div>
+</div>
+
+</div>
+
+
+  <div class="crumbs"><a href="__URLSITE__/home1">网站首页</a><span> &gt; </span><a href="">友情链接</a><span> &gt; </span>
+  </div>
+ <div id ="link">
+     <ul>
+       {volist name='linkRes' id ='linkres'}
+          <li>  
+	      <a href="<?php  if(strpos($linkres['url'], 'http://')!==0){echo 'http://'.$linkres['url'];}else{echo $linkres['url'];} ?>" title="{$linkres.title}"  target="_blank">{$linkres.title}
+	      </a>
+           </li>
+		  {/volist}
+      </ul>
+    	 
+         	<!--pages-->
+         </div>        
+    </div>
+
+
+
+
+{include file="public/footer"}

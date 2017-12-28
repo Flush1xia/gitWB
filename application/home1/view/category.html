@@ -1,0 +1,209 @@
+{template "content","header"}
+<DIV class=container>
+<DIV class=P10></DIV>
+<DIV class=contentbox>
+
+
+ 
+
+  <div class="sidebar right">
+  <div class="box">
+          <DIV class=sidebar_tit>快捷方式</DIV>
+<DIV class="Btop sidesp">
+<UL>
+<!--{pc:content  action="position" posid="18"  order="listorder DESC" thumb="1" num="5"}
+{loop $data $r}
+  <LI><A href="http://172.30.188.55/" target=_blank><IMG 
+  src="{thumb($r['thumb'],190,54)}" width=190 
+  height=54></A> </LI>
+{/loop}
+{/pc}-->
+
+  <LI>
+{pc:link  action="type_list" siteid="$siteid" linktype="1" order="listorder DESC" num="8" return="pic_link"}
+{loop $pic_link $v}
+<a href="{$v['url']}" title="{$v['name']}" target="_blank"><img src="{$v[logo]}" width="190" height="54" /></a>
+{/loop}
+{/pc}  </LI>
+
+  </UL>
+
+          </div>
+</div>
+
+
+
+        <div class="box bot">
+          <div class="sidebar_tit">{$CAT[catname]}</div>
+          <div class="Btop sidenav">
+          	<ul>
+            {pc:content action="category" catid="$parentid" num="9" siteid="$siteid" order="listorder ASC"}
+                     {loop $data $r}
+                       <li><a href="{$r[url]}">{$r[catname]}</a></li>
+                        {/loop}
+                   {/pc}
+			                  </ul>
+          </div>
+        </div>
+
+		      
+
+             <div class="P10"></div>
+      
+    </div>
+
+
+
+
+<DIV class="main left">
+<DIV class=box>
+<DIV class=main_tit>
+<DIV class="txt left">{$CAT[catname]}</DIV></DIV>
+<DIV class=category>
+<!--<DIV class="FocusPicBox left">
+<DIV class=FocusPic>
+<DIV id=main-slide class=content>
+<div class="changeDiv">  
+{pc:content action="position" posid=="18"  order="id" num="5" cache="3600"}
+{loop $data $r}
+<a  title={$r[title]} href="{$r[url]}" > <IMG 
+alt= {$r[title]} src="{thumb($v[thumb],320,240)}"></a>
+{/loop}
+{/pc}											  
+</div>
+</div>
+</div>
+</div>-->
+
+<!--<div class="new right">
+{pc:content action="lists" catid="$catid" order="id" num="1" cache="3600"}
+{loop $data $r}
+<div class="tip">
+<h3><a href="{$r[url]}" target="_blank">{$r[title]}</a></h3>
+<p>{str_cut($r[description],80)}</p>
+</div>
+ {/loop}
+{/pc}
+<ul>
+{pc:content action="lists" catid="$catid" order="id" num="6" cache="3600"}
+{loop $data $r}
+<li><span class="time">01-03</span><a href="{$r[url]}" title={$r[title]} target="_blank">{$r[title]}</a></li>
+  {/loop}
+{/pc}
+</ul>
+
+</div>--></div> 
+
+</div>
+<div class="P10"></div>
+
+<div class="col-left">
+
+	<!--{php $j=1;}
+	{loop subcat($catid) $v}
+	
+	{php if($v['type']!=0) continue;}
+        <div class="box cat-area" {if $j%2==1}style="margin-right:10px"{/if}>
+		<div class="cat_title"><div class="txt">{$v[catname]}</div><span class="more"><a href="{$v[url]}">更多&gt;&gt;</a></span></div>
+             <div class="catlis">                 
+               <ul >
+                {pc:content action="lists" catid="$v[catid]" num="5" order="id DESC"}
+					{loop $data $v}
+			 
+						<li><span class="time">{date('Y-m-d',$r[inputtime])}</span><a href="{$v[url]}" target="_blank" >{$v[title]}</a></li>
+
+					{/loop}
+				{/pc}
+                </ul> 
+
+
+            </div>
+        </div>
+        {if $j%2==0}<div class="bk10"></div>{/if}
+	{$j++}
+
+	{/loop}-->
+{php $j=1;}
+{if ($groupid =="") }
+{pc:get sql="select b.* from v9_category b where b.parentid=($catid) and (b.catid not BETWEEN '74' and '87') order by b.catid "} 
+ {loop $data $v}	
+	{php if($v['type']!=0) continue;}
+        <div class="box cat-area" {if $j%2==1}style="margin-right:10px"{/if}>
+		<div class="cat_title"><div class="txt">{$v[catname]}</div><span class="more"><a href="{$v[url]}">更多&gt;&gt;</a></span></div>
+             <div class="catlis">                 
+               <ul >
+			   
+				{pc:get sql="select a.* from v9_news a where  a.catid=$v[catid]  order by a.id desc "}
+				 {loop $data $r}
+				<li><span class="time">{date('Y-m-d',$r[inputtime])}</span><a href="{$r[url]}" target="_blank" >{str_cut($r[title],38)}</a></li>
+					{/loop}
+				{/pc}
+			
+                </ul> 
+            </div>
+        </div>
+        {if $j%2==0}<div class="bk10"></div>{/if}
+	{$j++}
+	{/loop}
+		{/if}
+
+
+{if ($groupid =="4") }
+{pc:get sql="select b.* from v9_category b where b.parentid=($catid) and (b.catid not BETWEEN '80' and '87') order by b.catid "} 
+ {loop $data $v}	
+	{php if($v['type']!=0) continue;}
+        <div class="box cat-area" {if $j%2==1}style="margin-right:10px"{/if}>
+		<div class="cat_title"><div class="txt">{$v[catname]}</div><span class="more"><a href="{$v[url]}">更多&gt;&gt;</a></span></div>
+             <div class="catlis">                 
+               <ul >
+			   
+				{pc:get sql="select a.* from v9_news a where  a.catid=$v[catid]  order by a.id desc "}
+				 {loop $data $r}
+				<li><span class="time">{date('Y-m-d',$r[inputtime])}</span><a href="{$r[url]}" target="_blank" >{str_cut($r[title],38)}</a></li>
+					{/loop}
+				{/pc}
+			
+                </ul> 
+            </div>
+        </div>
+        {if $j%2==0}<div class="bk10"></div>{/if}
+	{$j++}
+	{/loop}
+		{/if}
+
+
+{if ($groupid =="5") }
+{pc:get sql="select b.* from v9_category b where b.parentid=($catid)  order by b.catid "} 
+ {loop $data $v}	
+	{php if($v['type']!=0) continue;}
+        <div class="box cat-area" {if $j%2==1}style="margin-right:10px"{/if}>
+		<div class="cat_title"><div class="txt">{$v[catname]}</div><span class="more"><a href="{$v[url]}">更多&gt;&gt;</a></span></div>
+             <div class="catlis">                 
+               <ul >
+			   
+				{pc:content action="lists" catid="$v[catid]" num="5" order="id DESC"}
+				 {loop $data $r}
+				<li><span class="time">{date('Y-m-d',$r[inputtime])}</span><a href="{$r[url]}" target="_blank" >{str_cut($r[title],38)}</a></li>
+					{/loop}
+				{/pc}
+			
+                </ul> 
+            </div>
+        </div>
+        {if $j%2==0}<div class="bk10"></div>{/if}
+	{$j++}
+	{/loop}
+		{/if}
+
+
+  </div>
+
+<div class="P10 PT"></div>
+</div>
+<script type="text/javascript"> 
+$(function(){
+new slide("#main-slide","cur",320,240,1);//焦点图
+new SwapTab(".SwapTab01","li",".tab-content01","ul","fb");//新闻TAB
+})
+</script>
+{template "content","footer"}

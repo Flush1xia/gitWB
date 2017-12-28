@@ -1,0 +1,234 @@
+<LINK href="http://www.gzw.dl.gov.cn/" rel="dns-prefetch">			   
+<LINK href="__HOME__/style/message.css" rel="stylesheet" type="text/css" media="all">		  
+ <LINK href="__HOME__/style/gzw_style.css" rel="stylesheet" type="text/css" media="all">		  
+ <LINK href="__HOME__/style/web_style.css" rel="stylesheet" type="text/css" media="all">				   
+<SCRIPT src="__HOME__/style/jquery.min.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/jquery.lazyload.min.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/jcarousellite.pack.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/jquery.loginValidation.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/index.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/png.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/placeHolder.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/floatadv.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/h.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/index_new_2014.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/jquery.cxslide.min.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/jquery_trs_web.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/jquery-1.8.3.min.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/tinybox.js" type="text/javascript"></SCRIPT>
+		   
+<SCRIPT src="__HOME__/style/allrunImgMove.js" type="text/javascript"></SCRIPT>
+							     
+<SCRIPT src="__HOME__/style/swfobject_modified.js" type="text/javascript"></SCRIPT>
+   
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD>   
+<BODY><TITLE>artlist</TITLE> <!--飘窗js--> <!-- 关闭右侧飘窗 --> 
+<SCRIPT type="text/javascript">
+
+
+
+
+/*
+*author：
+*product：首页通栏banner切换效果实现2
+*date：
+*/	    
+	 var index2=1;
+	 var len2=$(".banner_link0814>a").length;
+
+	 function showSys2(num)  //图片切换函数
+	   {
+		   $(".banner_link0814>a").hide();
+		   $(".banner_link0814>a").eq(num).fadeIn();
+	   }
+	   
+	   function ziDong() {  //自动切换
+			if(index2==2){
+			 index2=0;
+			}
+			showSys2(index2);
+			index2=index2+1;
+
+	   }
+	   
+	    int1=setInterval(ziDong,4000);
+		
+		 $(".banner_link0814").mouseover(function()  //移动到上面时停止自动切换
+		   {
+			clearInterval(int1);
+		   });
+		$(".banner_link0814").mouseout(function()  //移开时继续自动切换
+		   {
+			int1=setInterval(ziDong,4000);
+		   });
+		
+		
+			function searchsubmit() {
+				alert(("#textfiled").val());
+				if($("#textfield").val() == "请输入关键词") {
+					alert("请输入关键词");
+				}else{
+					$("#serachform").submit();
+				}	
+			}
+			
+</SCRIPT>
+
+    <script type="text/javascript">
+        function convert(rows){
+            function exists(rows, pid){
+                for(var i=0; i<rows.length; i++){
+                    if (rows[i].id == pid) return true;
+                }
+                return false;
+            }
+            
+            var nodes = [];
+            // get the top level nodes
+            for(var i=0; i<rows.length; i++){
+                var row = rows[i];
+                if (!exists(rows, row.pid)){
+                    nodes.push({
+                        id:row.id,
+                        text:row.catename
+                    });
+                }
+            }
+            
+            var toDo = [];
+            for(var i=0; i<nodes.length; i++){
+                toDo.push(nodes[i]);
+            }
+            while(toDo.length){
+                var node = toDo.shift();    // the parent node
+                // get the children nodes
+                for(var i=0; i<rows.length; i++){
+                    var row = rows[i];
+                    if (row.pid == node.id){
+                        var child = {id:row.id,text:row.catename};
+                        if (node.children){
+                            node.children.push(child);
+                        } else {
+                            node.children = [child];
+                        }
+                        toDo.push(child);
+                    }
+                }
+            }
+            return nodes;
+        }
+        
+        $(function(){
+            $('#tt').getTree({
+                url: 'http://127.0.0.1/bick/public/index.php/home/article/index/cateid/28',
+                loadFilter: function(rows){
+                    return convert(rows);
+                }
+            });
+        });
+</script>
+	
+<SCRIPT language="javascript">
+	/* 首页tab栏切换效果 */
+	$(function(){
+	 	$(".tab1_1,.tab1").bind("mouseover",function(){
+			var t = $(this);	
+			if(t.attr("class").indexOf("tab1_1")>-1){
+				t.removeClass("tab1_1").addClass("tab1").siblings(":not('.more')").removeClass("tab1").addClass("tab1_1");
+			}		
+			var po = t.parent().children().index(this);
+			t.parent().siblings("div").hide().eq(po).show();
+		});
+	});
+	
+	
+	
+</SCRIPT>
+ <!----> <!--顶部导航  -->  
+<DIV class="top">
+<DIV id="container_1100">
+
+<UL class="link1">
+  <FORM id="serachform" action="/newsQueryList__.html" 
+method="get"><INPUT class="mButton" id="submitbuttom" onclick="searchsubmit()" type="submit" value="搜索"> 
+            <INPUT name="newsTitle" class="mInput" id="textfield" onfocus="if (value =='请输入关键词'){value =''}" onblur="if (value ==''){value='请输入关键词'}" type="text" value="请输入关键词"> 
+               	  </FORM></UL></DIV></DIV><!--logo  --> 
+<DIV class="i_header">
+<DIV class="i_logo"><IMG width="873" height="143" src="__HOME__/images/logo1.png"></DIV></DIV>
+<DIV class="i_menu">
+<DIV id="container_1100">
+<UL class="nav_ul">
+  <LI class="menu_1" id="ibar_nav1"><A href="{:url('index/index')}">网站首页</A></LI>
+  {volist name="cateres" id="cate"} 
+  <LI class="menu_2" id="ibar_nav2"><A href="{:url('artlist/index',array('cateid'=>$cate.id))}">{$cate.id}{$cate.catename}</A></LI>
+  {/volist}
+
+</UL></DIV></DIV>
+<DIV class="fen-war" id="container_1100">
+<SCRIPT type="text/javascript">
+$(document).ready(function(){
+	$(".ej").click(function(){
+		var id = $(this).attr("name").substring(1,4);
+		if($(this).attr("id") == "close" ) {
+			 $(".list-ej").slideUp(1000);
+			 $(".list-ej").css('dispaly','none');
+			 $(".ej").attr("id","close");
+			 $("#d" + id).slideDown(1000);
+			 $("#d" + id).css('dispaly','');
+			 $(this).attr("id","open");
+		 } else {
+			 $("#d" + id).slideUp(1000);
+			 $("#d" + id).css('dispaly','none');
+			 $(this).attr("id","close");
+		 }
+	});
+	
+	$(".ej1").click(function(){
+		var id = $(this).attr("name").substring(1,4);
+		if($(this).attr("id") == "close" ) {
+			/* $(".list-ej").slideUp(1000);
+			 $(".list-ej").css('dispaly','none');
+			 $(".ej").attr("id","close");*/
+			 $("#d" + id).slideDown(1000);
+			 $("#d" + id).css('dispaly','');
+			 $(this).attr("id","open");
+		 } else {
+			 $("#d" + id).slideUp(1000);
+			 $("#d" + id).css('dispaly','none');
+			 $(this).attr("id","close");
+		 }
+	});
+	
+	$(".ej2").click(function(){
+		var id = $(this).attr("name").substring(1,4);
+		if($(this).attr("id") == "close" ) {
+			 $(".list-ej2").slideUp(1000);
+			 $(".list-ej2").css('dispaly','none');
+			 $(".ej2").attr("id","close");
+			 $("#d" + id).slideDown(1000);
+			 $("#d" + id).css('dispaly','');
+			 $(this).attr("id","open");
+		 } else {
+			 $("#d" + id).slideUp(1000);
+			 $("#d" + id).css('dispaly','none');
+			 $(this).attr("id","close");
+		 }
+	});
+	  
+	 $("a[name='a722']").click();
+	 
+	});
+</SCRIPT>

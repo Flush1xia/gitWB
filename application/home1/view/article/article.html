@@ -1,0 +1,131 @@
+{include file="public/header"}
+
+
+<div class="container">
+	<div class="P10"></div>
+    <div class="contentbox">
+	
+      <div class="sidebar right">
+
+	   <div class="box">
+          <DIV class=sidebar_tit>快捷方式</DIV>
+<DIV class="Btop sidesp">
+<UL>
+ <LI>
+
+<a href="{}" title="{}" target="_blank"><img src="{}" width="190" height="54" /></a>
+ 
+</LI>
+  </UL>
+
+          </div>
+        <div class="box bot">
+          <div class="sidebar_tit">{$cateInfo['catename']}</div>
+          <div class="Btop sidenav">
+          	<ul>
+            	
+                       <li><a href="{}">{$cateInfo['catename']}</a></li>
+                 
+			                  </ul>
+          </div>
+        </div>
+
+</div>        <div class="P10"></div>
+      
+    </div>
+
+
+      <div class="main left">
+        <div class="box">
+		 
+          <div class="main_tit">
+            <div class="txt left">{$cateInfo['catename']}</div>
+
+			 <SPAN class=crumbs><A  href="{:url('index/index')}">首页</A>
+			 {volist name="posArr" id="posCate"} <SPAN> &gt; </SPAN> 
+			 
+              <A href="{:url('article/index',array('cateid'=>$posCate['id']))}">{$posCate.catename}</A> 
+			  {/volist}
+			  &gt; 正文</SPAN> 
+</div>
+        <div class="show">
+        <div id="Article">
+        	<h1>{$articles.title}<br>
+             <span>{$articles.time}&nbsp;&nbsp;&nbsp;点击数：</span><span id="hits">{$articles.click}</span></h1>
+			{if $articles.desc}<div class="summary">　　{$articles.desc}</div>{/if}			
+			<div class="content">
+			{$articles.content}
+		</div>
+				<!--内容关联投票-->
+				                
+			           <!--<div style="color:#999; text-align:right;">（编辑：杨登良）</div>-->
+			</div>
+			<div id="pages" class="text-c"></div>
+
+
+
+	  
+
+       
+      </div>
+        </div>
+        
+        </div>
+    </div>
+
+    <div class="P10 PT"></div>
+</div>
+<div class="bh" style="clear:both;height:1px; line-height:1px; font-size:1px;"></div>    
+</div>
+<script type="text/javascript">
+<!--
+	function show_ajax(obj) {
+		var keywords = $(obj).text();
+		var offset = $(obj).offset();
+		var jsonitem = '';
+		$.getJSON("http://www.gxll.gov.cn/index.php?m=content&c=index&a=json_list&type=keyword&modelid=1&id=40412&keywords="+encodeURIComponent(keywords),
+				function(data){
+				var j = 1;
+				var string = "<div class='point key-float'><div style='position:relative'><div class='arro'></div>";
+				string += "<a href='JavaScript:;' onclick='$(this).parent().parent().remove();' hidefocus='true' class='close'><span>关闭</span></a><div class='contents f12'>";
+				if(data!=0) {
+				  $.each(data, function(i,item){
+					j = i+1;
+					jsonitem += "<a href='"+item.url+"' target='_blank'>"+j+"、"+item.title+"</a><BR>";
+					
+				  });
+					string += jsonitem;
+				} else {
+					string += '没有找到相关的信息！';
+				}
+					string += "</div><span class='o1'></span><span class='o2'></span><span class='o3'></span><span class='o4'></span></div></div>";		
+					$(obj).after(string);
+					$('.key-float').mouseover(
+						function (){
+							$(this).siblings().css({"z-index":0})
+							$(this).css({"z-index":1001});
+						}
+					)
+					$(obj).next().css({ "left": +offset.left-100, "top": +offset.top+$(obj).height()+12});
+				});
+	}
+
+	function add_favorite(title) {
+		$.getJSON('http://www.gxll.gov.cn/api.php?op=add_favorite&title='+encodeURIComponent(title)+'&url='+encodeURIComponent(location.href)+'&'+Math.random()+'&callback=?', function(data){
+			if(data.status==1)	{
+				$("#favorite").html('收藏成功');
+			} else {
+				alert('请登录');
+			}
+		});
+	}
+
+$(function(){
+  $('#Article .content img').LoadImage(true, 660, 660,'http://www.gxll.gov.cn/statics/images/s_nopic.gif');    
+})
+//-->
+</script>
+<script language="JavaScript" src="__URLSITE__/api.php"></script>
+
+
+{include file="public/footer"}

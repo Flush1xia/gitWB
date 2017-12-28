@@ -1,0 +1,69 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0059)http://www.gzw.dl.gov.cn/newsQueryList_722_.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+	 <TITLE>artlist	 </TITLE>	 
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="author" content="artlist tp5">	 
+<META http-equiv="X-UA-Compatible" content="IE=edge">	 
+{include file="public/head"}
+		 
+<DIV class="fen-menu">
+        
+<UL class="top">{$cateInfo.catename}</UL>
+<ul class="list" id="tt"></ul>
+<UL class="list">
+  <DIV class="div-ej">
+
+    {volist name="childL1" id ="childl1"}
+  <LI class="this"><A name="a722" class="ej" id="close" {if condition=" empty($childl1['id']) neq true "} href="{:url('artlist/index',array('cateid'=>$childl1['id']))}" {else /} href="{:url('artlist/index',array('cateid'=>$childl1['id']))}" {/if} >{$childl1.catename}</A></LI>
+  {/volist}
+  <DIV class="list-ej" id="d722" style="display: none;">
+    <SPAN><A href="http=">工作信息公开</A></SPAN><SPAN><A href="http:/c=y">相关政策规定</A></SPAN>
+</DIV>
+</DIV>
+</UL></DIV>
+
+<DIV class="fen-right">
+   
+<DIV class="fen-title">{$cateInfo.catename}</DIV>
+
+<DIV class="fen-news">
+<UL class="list">
+  {volist name="artRes" id ="artres"}
+  <LI><A href="http://www." target="_blank">{$artres.title}</A><SPAN>2017-09-01</SPAN></LI>
+  {/volist}
+</UL></DIV><!-- <div class="wra-pager" > --> 
+                 	  
+<SCRIPT src="__HOME__/style/jquery.dlhitechCommon.js" type="text/JavaScript"></SCRIPT>
+ 
+<DIV class="wra-pager">
+<DIV class="pager"><A title="首页" href="http://www.gzw.dl.gov.cn/newsQueryList_722_.html?pageNumber=0&amp;typeId=722">|&lt;&lt;</A> 
+  <A title="前页" href="http://www.gzw.dl.gov.cn/newsQueryList_722_.html?pageNumber=1&amp;typeId=722">&lt;&lt;</A> 
+  <SPAN class="p_total">1/2</SPAN>   <A title="后页" href="http://www.gzw.dl.gov.cn/newsQueryList_722_.html?pageNumber=2&amp;typeId=722">&gt;&gt;</A> 
+  <A title="末页" href="http://www.gzw.dl.gov.cn/newsQueryList_722_.html?pageNumber=2&amp;typeId=722">&gt;&gt;|</A> 
+  <INPUT name="pagination_pageNumber" id="pagination_pageNumber" value="1">   <A 
+id="pagination_jump" onclick="" href="http://www.gzw.dl.gov.cn/newsQueryList_722_.html?a=b&amp;&amp;typeId=722&amp;pageNumber=">GO</A> 
+</DIV></DIV>        </DIV>	   <BR 
+class="blank"></DIV><!--友情链接  --> 
+
+<!--友情链接  --> 
+{include file="public/links"}
+<!--footer底部-->   
+<!--footer底部--> 
+{include file="public/footer"}
+<SCRIPT src="__HOME__/style/adFloat1.js" type="text/Javascript"></SCRIPT>
+ 
+<SCRIPT src="__HOME__/style/adFloat2.js" type="text/Javascript"></SCRIPT>
+ 
+<SCRIPT src="__HOME__/style/adFloat3.js" type="text/Javascript"></SCRIPT>
+ 
+<SCRIPT type="text/javascript">
+    var today = new Date();
+    function removediv(divid){
+	 $("#"+divid).remove();
+	}
+    
+</SCRIPT>
+ </BODY></HTML>

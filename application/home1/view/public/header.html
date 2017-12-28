@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><head _wxhkphogpkobbkjccgfifhfjlahnoocnan_="shake_1.0"><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<title>天津中车机辆装备有限公司</title>
+<meta name="keywords" content="天津中车机辆装备有限公司">
+<meta name="description" content="天津中车机辆装备有限公司">
+
+ <!--
+  <link href="__HOME__/style/bootstrap.css" rel="stylesheet">
+<script src="__HOME__/style/bootstrap.js"></script>
+<script src="__HOME__/style/jquery-1.4.1.min.js" type="text/javascript"></script>
+<script src="__HOME__/style/jquery.error.js" type="text/javascript"></script>
+<script src="__HOME__/style/jtemplates.js" type="text/javascript"></script>
+<script src="__HOME__/style/jquery.form.js" type="text/javascript"></script> -->
+
+<link href="__HOME__/style/gxll.css" rel="stylesheet" type="text/css">
+<LINK  rel=stylesheet type=text/css  href="__HOME__/style/style.css"><LINK rel=stylesheet  type=text/css href="__HOME__/style/reset.css">
+<link href="__HOME__/style/defaulthuifa.css" rel="stylesheet" type="text/css">
+<script src="__HOME__/style/hm.js"></script><script type="text/javascript" src="__HOME__/style/jquery.min.js"></script>
+<script type="text/javascript" src="__HOME__/style/jquery.sgallery.js"></script>
+<script type="text/javascript" src="__HOME__/style/search_common.js"></script>
+<script type="text/javascript" src="__HOME__/style/jquery.SuperSlide.2.1.js"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?200f081f56d5982bef9ca76f74789bbb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style>@font-face{font-family:uc-nexus-iconfont;src:url(chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff) format('woff'),url(chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf) format('truetype')}</style><style></style></head>
+<body style="background-color: rgb(204, 232, 207);">
+<div class="header">
+  <div class="header_top">
+  {$Think.session.id}当前登录人:{$Think.session.desc}
+  <span class="right">
+  
+  <a target="_blank" href="__URLSITE__/admin/login/index.html">信息发布</a> 
+  | <a target="_blank" href="__URLSITE__/home1/login/index/index.html">登录</a>
+	  </span> 
+ </div>
+  <div class="banner" style="height:220px;">
+    <img src="__HOME__/images/banner1.jpg" quality="high" width="980" height="220"  >		   
+  </div>
+  <div class="menu">
+    <ul class="nav-site">
+
+	 		  
+    		<li class="nav-ind"><a  href="{:url('index/index')}">首 页</a></li>   
+                  {volist name="cateres" id="cate"} 
+                      <li><a  href="{:url('artlist/index',array('cateid'=>$cate['id']))}">{$cate.catename}</a>
+                 {if condition="$cate['children'] neq 0"}
+                 <ul>
+                      <?php foreach ($cate['children'] as $k2 => $v2):?>
+                        <li><a href="__URLSITE__/home1/{if condition="$v2['type'] eq 1"}artlist{elseif condition="$v2['type'] eq 3" /}imglist{else /}page{/if}/index/cateid/{$v2.id}"><?php echo $v2['catename'];?></a></li>
+                           <?php endforeach;?>
+                          </ul>
+                            {/if}
+					  
+                     </li> 
+					  {/volist}
+     </ul>
+  </div>
+
+  <div class="set">
+	  <!--公告-->
+    <div id="announ" class="left">
+	<ul >
+ <li><a  href="{}" target="_blank">管理员公告</a><span>2017/12/20</span></li>
+        </ul>
+       </div>
+
+    <script type="text/javascript">
+
+$(function(){
+
+	startmarquee('announ',30,1,500,3000);
+
+})
+
+</script>
+    <div >
+     <span class="Date right">
+    <script type="text/javascript">
+        function CalConv() {
+            FIRSTYEAR = 1998;
+            LASTYEAR = 2031;
+            today = new Date();
+            SolarYear = today.getFullYear();
+            SolarMonth = today.getMonth() + 1;
+            SolarDate = today.getDate();
+            Weekday = today.getDay();
+            LunarCal = [new tagLunarCal(27, 5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1), new tagLunarCal(46, 0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1), new tagLunarCal(35, 0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1), new tagLunarCal(23, 4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1), new tagLunarCal(42, 0, 1, 4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1), new tagLunarCal(31, 0, 2, 9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0), new tagLunarCal(21, 2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1), new tagLunarCal(39, 0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1), new tagLunarCal(28, 7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1), new tagLunarCal(48, 0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1), new tagLunarCal(37, 0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1), new tagLunarCal(25, 5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1), new tagLunarCal(44, 0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1), new tagLunarCal(33, 0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1), new tagLunarCal(22, 4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0), new tagLunarCal(40, 0, 1, 2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0), new tagLunarCal(30, 9, 2, 7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1), new tagLunarCal(49, 0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1), new tagLunarCal(38, 0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0), new tagLunarCal(27, 6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1), new tagLunarCal(46, 0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0), new tagLunarCal(35, 0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0), new tagLunarCal(24, 4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1), new tagLunarCal(42, 0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1), new tagLunarCal(31, 0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0), new tagLunarCal(21, 2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1), new tagLunarCal(40, 0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1), new tagLunarCal(28, 6, 2, 5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0), new tagLunarCal(47, 0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1), new tagLunarCal(36, 0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1), new tagLunarCal(25, 5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0), new tagLunarCal(43, 0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1), new tagLunarCal(32, 0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0), new tagLunarCal(22, 3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0)];
+            SolarCal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            SolarDays = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397];
+            AnimalIdx = ["马", "羊", "猴", "鸡", "狗", "猪", "鼠", "牛", "虎", "兔", "龙", "蛇"];
+            LocationIdx = ["南", "东", "北", "西"];
+            if (SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR) return 1;
+            sm = SolarMonth - 1;
+            if (sm < 0 || sm > 11) return 2;
+            leap = GetLeap(SolarYear);
+            if (sm == 1) d = leap + 28;
+            else d = SolarCal[sm];
+            if (SolarDate < 1 || SolarDate > d) return 3;
+            y = SolarYear - FIRSTYEAR;
+            acc = SolarDays[leap * 14 + sm] + SolarDate;
+            kc = acc + LunarCal[y].BaseKanChih;
+            Kan = kc % 10;
+            Chih = kc % 12;
+            Location = LocationIdx[kc % 4];
+            Age = kc % 60;
+            if (Age < 22) Age = 22 - Age;
+            else Age = 82 - Age;
+            Animal = AnimalIdx[Chih];
+            if (acc <= LunarCal[y].BaseDays) {
+                y--;
+                LunarYear = SolarYear - 1;
+                leap = GetLeap(LunarYear);
+                sm += 12;
+                acc = SolarDays[leap * 14 + sm] + SolarDate
+            } else LunarYear = SolarYear;
+            l1 = LunarCal[y].BaseDays;
+            for (i = 0; i < 13; i++) {
+                l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+                if (acc <= l2) break;
+                l1 = l2
+            }
+            LunarMonth = i + 1;
+            LunarDate = acc - l1;
+            im = LunarCal[y].Intercalation;
+            if (im != 0 && LunarMonth > im) {
+                LunarMonth--;
+                if (LunarMonth == im) LunarMonth = -im
+            }
+            if (LunarMonth > 12) LunarMonth -= 12;
+            today = new Date();
+            function initArray() {
+                this.length = initArray.arguments.length
+                for (var i = 0; i < this.length; i++) this[i + 1] = initArray.arguments[i]
+            }
+            var d = new initArray("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+            document.write("", today.getFullYear(), "年", today.getMonth() + 1, "月", today.getDate(), "日 ", d[today.getDay() + 1], "");
+            document.write(" 农历 " + LunarMonth + "月" + LunarDate + "日");
+            return 0
+        }
+        function GetLeap(year) {
+            if (year % 400 == 0) return 1;
+            else if (year % 100 == 0) return 0;
+            else if (year % 4 == 0) return 1;
+            else return 0
+        }
+        function tagLunarCal(d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+            this.BaseDays = d;
+            this.Intercalation = i;
+            this.BaseWeekday = w;
+            this.BaseKanChih = k;
+            this.MonthDays = [m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13]
+        }
+        CalConv();
+    </script>
+</span>
+    </div>
+  </div>
+</div>

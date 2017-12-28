@@ -1,0 +1,62 @@
+{include file="public/header"}
+<DIV class=container>
+<DIV class=P10></DIV>
+<DIV class=contentbox>
+<DIV class="main left">
+<DIV class=box>
+
+<DIV class=main_tit>
+{}
+<DIV class="txt left">{}</DIV><SPAN class=crumbs><A 
+href="{}">首页</A><SPAN> &gt; </SPAN> <A 
+href="{}">{}</A> &gt; 列表</SPAN> 	    
+</DIV>
+
+<UL class=list>
+{volist name="artRes" id ="artres"}
+  <LI><SPAN>{$artres.time}</SPAN>
+  <DIV class=author>作者：</DIV><A title=" "
+  href="{{:url('article/index',array('artid'=>$artres['id']))}}" 
+  target=_blank>{$artres.title}</A> 
+   </LI>
+   <li class="bk20"></li>
+{/volist}
+        </ul>
+        <div id="pages" class="text-c">{}</div>
+
+  
+<DIV class=P10></DIV>
+<DIV id=pages class=text-c></DIV></DIV></DIV>
+<DIV class="sidebar right">
+<DIV class=box>
+<DIV class=sidebar_tit>快捷方式</DIV>
+<DIV class="Btop sidesp">
+<UL>
+ <LI>
+
+<a href="{}" title="{}" target="_blank"><img src="{}" width="190" height="54" /></a>
+  </LI>
+  </UL>
+
+  </DIV></DIV>
+<DIV class="box bot">
+<DIV class=sidebar_tit>{$cateInfo['catename']}</DIV>
+
+<UL>
+ {volist name="childL1" id="childl1"}	  
+        <div class="box cat-area" style="margin-right:10px">
+		<div class="cat_title"><div class="txt">{$childl1['catename']}</div>
+		<span class="more"><a {if condition=" empty($childl1['id']) neq true "} href="{:url('artlist/index',array('cateid'=>$childl1['id']))}" {else /} href="{:url('artlist/index',array('cateid'=>$childl1['id']))}" {/if} >更多&gt;&gt;</a>
+		</span>
+		</div>
+		{/volist}
+		</UL>	
+	
+		</DIV>
+
+
+<DIV class=P10></DIV>
+</DIV>
+<DIV class="P10 PT"></DIV></DIV>
+
+{include file="public/footer"}
